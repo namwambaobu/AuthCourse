@@ -23,9 +23,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Exceptions\" />
       <Folder Include="Features\Auth\Login\" />
-      <Folder Include="Features\Auth\Register\" />
       <Folder Include="Features\Users\GetProfile\" />
       <Folder Include="Migrations\" />
     </ItemGroup>
