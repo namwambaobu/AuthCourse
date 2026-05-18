@@ -1,4 +1,3 @@
-// Extensions/RepositoryExtensions.cs
 using AuthCourse.Abstractions;
 using AuthCourse.Repository;
 

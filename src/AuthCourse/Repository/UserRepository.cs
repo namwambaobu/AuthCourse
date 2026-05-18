@@ -1,4 +1,3 @@
-// Repository/UserRepository.cs
 using AuthCourse.Abstractions;
 using AuthCourse.Database;
 using AuthCourse.Entities;

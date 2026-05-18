@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AuthCourse")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e286376b76df847963453b84533aaa45b435165")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+07f661f30872e5428fb5264aed22c37addfbe9c8")]
 [assembly: System.Reflection.AssemblyProductAttribute("AuthCourse")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AuthCourse")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -1,0 +1,4 @@
+# ASP.NET secrets
+appsettings.Development.json
+secrets.json
+appsettings.json
