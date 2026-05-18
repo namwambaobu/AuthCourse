@@ -1,4 +1,3 @@
-// Extensions/DatabaseExtensions.cs
 using AuthCourse.Database;
 using Microsoft.EntityFrameworkCore;
 

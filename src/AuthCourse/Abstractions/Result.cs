@@ -1,4 +1,3 @@
-// Abstractions/Result.cs
 namespace AuthCourse.Abstractions;
 
 public class Result<T>

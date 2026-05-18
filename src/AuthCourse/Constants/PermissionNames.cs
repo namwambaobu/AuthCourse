@@ -1,4 +1,3 @@
-// Constants/Permissions.cs
 namespace AuthCourse.Constants;
 
 public static class PermissionNames

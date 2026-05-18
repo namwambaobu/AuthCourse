@@ -1,5 +1,3 @@
-// Database/AppDbContext.cs
-
 using AuthCourse.Constants;
 using AuthCourse.Entities;
 using Microsoft.EntityFrameworkCore;

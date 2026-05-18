@@ -1,4 +1,3 @@
-// Program.cs
 using AuthCourse.Extensions;
 using Scalar.AspNetCore;
 
@@ -6,7 +5,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // ── Services ────────────────────────────────────────────────────────────────
 builder.Services.AddOpenApi();
-builder.Services.AddDatabase(builder.Configuration);   // ← add this
+builder.Services.AddDatabase(builder.Configuration);
+builder.Services.AddRepositories();
 
 // ── Pipeline ────────────────────────────────────────────────────────────────
 var app = builder.Build();

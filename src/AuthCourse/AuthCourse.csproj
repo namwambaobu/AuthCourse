@@ -28,8 +28,6 @@
       <Folder Include="Features\Auth\Register\" />
       <Folder Include="Features\Users\GetProfile\" />
       <Folder Include="Migrations\" />
-      <Folder Include="Pipelines\" />
-      <Folder Include="Repository\" />
     </ItemGroup>
 
 </Project>
