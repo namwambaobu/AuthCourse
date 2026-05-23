@@ -9,6 +9,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<User>       Users       => Set<User>();
     public DbSet<Role>       Roles       => Set<Role>();
     public DbSet<Permission> Permissions => Set<Permission>();
+    
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -56,7 +57,9 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             .UsingEntity("RolePermissions");
 
         // ── Seed data ─────────────────────────────────────────────────────
-        SeedData(modelBuilder);
+        SeedData(modelBuilder); 
+        Console.WriteLine("connected to the database");
+
     }
 
     private static void SeedData(ModelBuilder modelBuilder)

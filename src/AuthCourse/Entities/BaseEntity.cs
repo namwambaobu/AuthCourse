@@ -5,9 +5,13 @@ namespace AuthCourse.Entities;
 public abstract class BaseEntity
 {
     [Key]
-    public Guid Id { get; init; } = Guid.NewGuid();
-    public string CratedBy { get; init; } = "SYS";
-    public DateTime CreatedOn { get; init; } = DateTime.UtcNow;
-    public string ModifiedBy { get; init; } = "SYS";
-    public DateTime ModifiedOn { get; init; } = DateTime.UtcNow;
+    public Guid Id { get; set; }
+
+    public string CreatedBy { get; set; } = "SYS";
+
+    public DateTime CreatedOn { get; set; }
+
+    public string ModifiedBy { get; set; } = "SYS";
+
+    public DateTime ModifiedOn { get; set; }
 }
