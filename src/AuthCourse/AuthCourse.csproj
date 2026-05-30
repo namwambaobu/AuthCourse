@@ -23,7 +23,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Features\Auth\Login\" />
       <Folder Include="Features\Users\GetProfile\" />
       <Folder Include="Migrations\" />
     </ItemGroup>
