@@ -8,6 +8,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddDatabase(builder.Configuration);
 builder.Services.AddRepositories();
 builder.Services.AddMediatRWithBehaviours();
+builder.Services.AddJwtAuthentication(builder.Configuration);
 
 // ── Pipeline ────────────────────────────────────────────────────────────────
 var app = builder.Build();

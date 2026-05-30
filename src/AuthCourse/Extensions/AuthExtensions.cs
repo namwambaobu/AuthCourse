@@ -1,4 +1,3 @@
-// Extensions/AuthExtensions.cs
 using System.Text;
 using AuthCourse.Abstractions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
