@@ -1,4 +1,5 @@
 using AuthCourse.Extensions;
+using AuthCourse.Features.Auth.Register;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,4 +21,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapRegisterEndpoint();
 app.Run();
