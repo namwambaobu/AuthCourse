@@ -1,4 +1,5 @@
 using AuthCourse.Extensions;
+using AuthCourse.Features.Auth.Login;
 using AuthCourse.Features.Auth.Register;
 using Scalar.AspNetCore;
 
@@ -25,4 +26,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRegisterEndpoint();
+app.MapLoginEndpoint();
 app.Run();
