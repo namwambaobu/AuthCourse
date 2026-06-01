@@ -54,7 +54,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
         modelBuilder.Entity<Role>()
             .HasMany(r => r.Permissions)
             .WithMany(p => p.Roles)
-            .UsingEntity("RolePermissions");
+            .UsingEntity("RolePermissions"); 
 
         // ── Seed data ─────────────────────────────────────────────────────
         SeedData(modelBuilder); 
