@@ -1,4 +1,3 @@
-// Features/Users/GetAllUsers/GetAllUsersEndpoint.cs
 using AuthCourse.Abstractions;
 using AuthCourse.Constants;
 using AuthCourse.Database;

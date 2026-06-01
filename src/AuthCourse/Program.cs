@@ -1,6 +1,10 @@
+// Program.cs
 using AuthCourse.Extensions;
 using AuthCourse.Features.Auth.Login;
 using AuthCourse.Features.Auth.Register;
+using AuthCourse.Features.Users.DeleteUser;
+using AuthCourse.Features.Users.GetAllUsers;
+using AuthCourse.Features.Users.GetProfile;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -27,4 +31,8 @@ app.UseAuthorization();
 
 app.MapRegisterEndpoint();
 app.MapLoginEndpoint();
+app.MapGetProfileEndpoint();
+app.MapGetAllUsersEndpoint();
+app.MapDeleteUserEndpoint();
+
 app.Run();
