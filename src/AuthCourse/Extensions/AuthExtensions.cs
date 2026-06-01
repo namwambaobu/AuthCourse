@@ -1,6 +1,9 @@
+using System.Reflection;
 using System.Text;
 using AuthCourse.Abstractions;
+using AuthCourse.Constants;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.IdentityModel.Tokens;
 
 namespace AuthCourse.Extensions;
@@ -21,6 +24,10 @@ public static class AuthExtensions
         // Register token service
         services.AddScoped<ITokenService, TokenService>();
 
+        // Register permission authorization handler
+        services.AddSingleton<IAuthorizationHandler,
+            PermissionAuthorizationHandler>();
+
         // Configure JWT bearer scheme
         var jwtSettings = configuration
             .GetSection(JwtOptions.SectionName)
@@ -29,8 +36,10 @@ public static class AuthExtensions
         services
             .AddAuthentication(options =>
             {
-                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                options.DefaultChallengeScheme    = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultAuthenticateScheme =
+                    JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme =
+                    JwtBearerDefaults.AuthenticationScheme;
             })
             .AddJwtBearer(options =>
             {
@@ -48,7 +57,25 @@ public static class AuthExtensions
                 };
             });
 
-        services.AddAuthorization();
+        // ── Register one policy per permission constant ───────────────────
+        services.AddAuthorization(options =>
+        {
+            var permissionNames = typeof(PermissionNames)
+                .GetFields(BindingFlags.Public | BindingFlags.Static |
+                           BindingFlags.FlattenHierarchy)
+                .Where(f => f.IsLiteral && !f.IsInitOnly)
+                .Select(f => f.GetRawConstantValue()?.ToString())
+                .Where(v => v is not null)
+                .Cast<string>();
+
+            foreach (var permission in permissionNames)
+            {
+                options.AddPolicy(permission, policy =>
+                    policy
+                        .RequireAuthenticatedUser()
+                        .AddRequirements(new PermissionRequirement(permission)));
+            }
+        });
 
         return services;
     }

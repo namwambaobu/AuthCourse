@@ -1,4 +1,3 @@
-// Abstractions/PermissionAuthorizationHandler.cs
 using Microsoft.AspNetCore.Authorization;
 
 namespace AuthCourse.Abstractions;
